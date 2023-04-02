@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-class WorkspaceService {
+class TaskService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_BACKEND_URL}/workspace`
+      baseURL: `${process.env.REACT_APP_BACKEND_URL}/tasks`
     });
 
     this.api.interceptors.request.use(config => {
@@ -32,6 +32,6 @@ class WorkspaceService {
   }
 }
 
-const workspaceService = new WorkspaceService();
+const taskService = new TaskService();
 
-export default workspaceService;
+export default taskService;
