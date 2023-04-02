@@ -4,7 +4,8 @@ import authService from '../../services/authService';
 
 export default function Signup() {
   const [user, setUser] = useState({
-    username: '',
+    name: '',
+    surname: '',
     email: ''
   })
   const [password, setPassword] = useState('');
@@ -32,7 +33,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password });
+      await authService.signup({ name: user.name, surname: user.surname, email: user.email, password });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -43,8 +44,10 @@ export default function Signup() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input required type="text" name="username" value={user.username} onChange={handleChange} />
+        <label>Name</label>
+        <input required type="text" name="name" value={user.name} onChange={handleChange} />
+        <label>Surname</label>
+        <input required type="text" name="surname" value={user.surname} onChange={handleChange} />
         <label>Email</label>
         <input required type="email" name="email" value={user.email} onChange={handleChange} />
         <label>Password</label>
