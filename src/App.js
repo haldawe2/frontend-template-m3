@@ -8,7 +8,9 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
-import Gantt from './views/Gantt';
+import Home from './views/Home';
+import Workspace from './views/Workspace';
+import Project from './views/Project';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       <Toaster/>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Gantt />} />
+        <Route path="/" element={<IsPrivate><Home /></IsPrivate>} />
+        <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
+        <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />

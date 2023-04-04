@@ -30,6 +30,10 @@ class WorkspaceService {
   get(id) {
     return this.api.get(`/${id}`).then(({ data }) => data);
   }
+
+  findByUser(id) {
+    return this.api.get(`/user/${id}`).then(({ data }) => data);
+  }
 }
 
 const workspaceService = new WorkspaceService();

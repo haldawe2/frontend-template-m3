@@ -30,6 +30,10 @@ class TaskService {
   get(id) {
     return this.api.get(`/${id}`).then(({ data }) => data);
   }
+
+  findByProject(id) {
+    return this.api.get(`/project/${id}`).then(({ data }) => data);
+  }
 }
 
 const taskService = new TaskService();
