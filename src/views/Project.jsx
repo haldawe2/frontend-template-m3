@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import { useParams, Outlet } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams, Outlet, NavLink } from 'react-router-dom'
 import projectService from '../services/projectService'
 import taskService from '../services/taskService'
 
@@ -29,6 +29,10 @@ export default function Project() {
   
   return (
     <div>
+      <ul className='flex justify-center gap-x-8 relative bottom-10 w-1/5 mx-auto'>
+        <li><NavLink to={`/project/${projectId}/gantt`}>Gantt</NavLink></li>
+        <li><NavLink to={`/project/${projectId}/tasks`}>Tasks</NavLink></li>
+      </ul>
       <Outlet context={[tasks]} />
     </div>
   )
