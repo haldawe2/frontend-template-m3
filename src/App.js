@@ -11,6 +11,7 @@ import IsPrivate from './components/IsPrivate';
 import Home from './views/Home';
 import Workspace from './views/Workspace';
 import Project from './views/Project';
+import Gantt from './components/Gantt';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<IsPrivate><Home /></IsPrivate>} />
         <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
-        <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} />
+        <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} >
+          <Route path="gantt" element={<Gantt />} />
+        </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
