@@ -54,7 +54,9 @@ export default function Gantt() {
   }
 
   useEffect(() => {
-    setCalendarWidth();
+    if (tasks.length > 0) {
+      setCalendarWidth();
+    }
     // eslint-disable-next-line
   }, [tasks]);
 
@@ -66,7 +68,8 @@ export default function Gantt() {
 
   return (
     <div>
-      {periodProject && 
+      {tasks.length <= 0 && <p className='text-center my-24 text-2xl'>Add a task to use the Gantt chart</p>}
+      {tasks.length > 0 && periodProject && 
       <table ref={tableRendered} className='w-4/5 h-[82vh] mx-auto my-8 border-solid border-2 border-black'>
         <thead>
           <tr>

@@ -27,6 +27,10 @@ class ProjectService {
     return this.api.delete(`/delete/${id}`).then(({ data }) => data);
   }
 
+  getFromWorkplace(id) {
+    return this.api.get(`/workspace/${id}`).then(({ data }) => data);
+  }
+
   get(id) {
     return this.api.get(`/${id}`).then(({ data }) => data);
   }
