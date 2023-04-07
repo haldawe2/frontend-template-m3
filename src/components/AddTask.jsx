@@ -24,7 +24,8 @@ export default function AddTask({ setAddTask, project, getTasks }) {
     setAddTask(false);
   }
 
-  const handleSendTask = async () => {
+  const handleSendTask = async (e) => {
+    e.preventDefault();
     const taskToDB = {
       name: form.name,
       project: project._id,

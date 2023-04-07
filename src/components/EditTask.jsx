@@ -30,7 +30,19 @@ export default function EditTask({ setEditTask, project, getTasks, tasks, taskId
     setEditTask(false);
   }
 
-  const handleSendTask = async () => {
+  const handleDeleteTask = async (e) => {
+    e.preventDefault();
+    try {
+      await taskService.delete(taskId);
+      await getTasks();
+      handleClose();
+    } catch (error) {
+      console.error(error);
+    };
+  };
+
+  const handleSendTask = async (e) => {
+    e.preventDefault();
     const taskToDB = {
       name: form.name,
       project: project._id,
@@ -85,6 +97,7 @@ export default function EditTask({ setEditTask, project, getTasks, tasks, taskId
         <label>Planned end date</label>
         <input type='date' name='plannedEndDate' value={form.plannedEndDate} onChange={handleForm}></input>
         <input type="submit" value="Submit"></input>
+        <button type='button' onClick={handleDeleteTask}>Delete</button>
       </form>
     </div>
   )

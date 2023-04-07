@@ -22,7 +22,10 @@ export default function Workspace() {
     <div>
       {workspace && workspace.projects.map((project) => {
         return (
-          <Link to={`/project/${project._id}/gantt`} key={project._id} className='h-32 w-48 bg-zinc-400 flex items-center justify-center'><p>{project.name}</p></Link>
+          <Link to={`/project/${project._id}/gantt`} key={project._id} 
+          className='h-32 w-48 bg-zinc-400 flex items-center justify-center'>
+            <p>{project.name}</p>
+          </Link>
         )
       })}
     </div>
