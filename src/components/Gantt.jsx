@@ -7,7 +7,6 @@ export default function Gantt() {
   const [tasks] = useOutletContext();
   const [tableReady, setTableReady] = useState(false);
   const [periodProject, setPeriodProject] = useState(null);
-  const [tableData, setTableData] = useState(null);
 
   const setCalendarWidth = () => {
     //Checks latest and earlier start/end date on the array of tasks and adds a buffer of days on the sides
@@ -61,15 +60,9 @@ export default function Gantt() {
 
   const tableRendered = useCallback(table => {
     if (table !== null) {
-      setTableData(table);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (tableData) {
       setTableReady(true);
     };
-  }, [tableData]);
+  }, []);
 
   return (
     <div>

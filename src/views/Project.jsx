@@ -30,10 +30,10 @@ export default function Project() {
   return (
     <div>
       <ul className='flex justify-center gap-x-8 relative bottom-10 w-1/5 mx-auto'>
-        <li><NavLink to={`/project/${projectId}/gantt`}>Gantt</NavLink></li>
         <li><NavLink to={`/project/${projectId}/tasks`}>Tasks</NavLink></li>
+        <li><NavLink to={`/project/${projectId}/gantt`}>Gantt</NavLink></li>
       </ul>
-      <Outlet context={[tasks]} />
+      <Outlet context={[tasks, project, getTasks]} />
     </div>
   )
 }
