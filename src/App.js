@@ -13,11 +13,13 @@ import Workspace from './views/Workspace';
 import Project from './views/Project';
 import Gantt from './components/Gantt';
 import Tasks from './components/Tasks';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div className="App">
       <Toaster/>
+      <Sidebar/>
       <Navbar />
       <Routes>
         <Route path="/" element={<IsPrivate><Home /></IsPrivate>} />

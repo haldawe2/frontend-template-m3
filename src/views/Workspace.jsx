@@ -38,7 +38,7 @@ export default function Workspace() {
   }
   
   return (
-    <div className='flex items-center gap-x-4 m-10 z-0'>
+    <div className='flex items-center gap-x-4 m-10 z-0 ml-20'>
       {editProject && <EditProject 
         setEditProject={setEditProject}
         user={user}
