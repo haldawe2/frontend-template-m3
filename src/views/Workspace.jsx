@@ -38,7 +38,7 @@ export default function Workspace() {
   }
   
   return (
-    <div className='flex items-center gap-x-8 m-10 z-0 ml-24'>
+    <div className='flex gap-x-8 py-8 z-0 pl-24 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
       {editProject && <EditProject 
         setEditProject={setEditProject}
         user={user}
@@ -54,19 +54,16 @@ export default function Workspace() {
       />}
       {projects && projects.map((project) => {
         return (
-          <div className='bg-gray-600 rounded-lg'>
-            <Link to={`/project/${project._id}/tasks`} key={project._id} 
-              className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-gray-500 items-center 
-                justify-center relative hover:translate-x-1 hover:-translate-y-1 duration-100 bg-white'>
-              <p className='text-xl'>{project.name}</p>
-              <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditProject(e, project)}>Edit</p>
-            </Link>  
-          </div>
-          
+          <Link to={`/project/${project._id}/tasks`} key={project._id} 
+           className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-[#2E9CCA] items-center
+                justify-center relative hover:bg-[#2E9CCA] hover:text-white duration-200 bg-white'>
+            <p className='text-xl'>{project.name}</p>
+            <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditProject(e, project)}>Edit</p>
+          </Link>    
         )
       })}
       <div className='w-72 h-44 flex justify-center items-center' onClick={handleCreateProject}>
-        <p className='text-[60px]'>+</p>
+        <p className='text-[60px] text-white hover:text-[#2E9CCA] duration-200'>+</p>
       </div>
     </div>
   )

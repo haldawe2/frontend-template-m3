@@ -38,13 +38,14 @@ export default function Sidebar() {
     return (
       <>
         {projects && <div className="group my-3">
-          <p className="text-white flex items-center mx-[5vw] h-12">{currentProject.name}</p>
+          <p className="flex items-center mx-[5vw] h-12 bg-white justify-center p-2 rounded-lg">{currentProject.name}</p>
           <div className="hidden group group-hover:block hover:block text-white flex items-center mx-[5vw]">
             {otherProjects.length === 0 && <p className="text-white h-12 flex items-center">No other projects</p>}
             {otherProjects.length > 0 && otherProjects.map(project => {
               return (
-                <Link to={`/project/${project._id}`} key={project._id}
-                className="text-white h-12 flex items-center">
+                <Link to={`/project/${project._id}/tasks`} key={project._id}
+                  className="text-black h-12 flex items-center hover:text-white hover:bg-[#2E9CCA] duration-200 
+                  bg-white justify-center p-2 rounded-lg my-2">
                     {project.name}
                 </Link>
               )
@@ -80,7 +81,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {user && <div className="bg-gray-800 w-[4vw] h-full absolute text-white flex flex-col items-center gap-y-2 z-40 peer">
+      {user && <div className="bg-[#25274D] w-[4vw] h-full absolute text-white flex flex-col items-center gap-y-2 z-40 peer">
         {userInitials && (
           <div className="rounded-[50%] bg-white w-12 h-12 flex items-center justify-center my-2">
             <p className="text-black">{userInitials}</p>
@@ -110,18 +111,18 @@ export default function Sidebar() {
       </div>}
       {user && userInitials && (
         <div
-          className="h-full absolute w-[18vw] z-30 bg-gray-800 gap-y-2 flex flex-col
+          className="h-full absolute w-[16vw] z-30 bg-[#25274D] gap-y-2 flex flex-col
         -translate-x-[16vw] peer-hover:translate-x-0 hover:translate-x-0 duration-150"
         >
-          <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer">
+          <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer hover:text-[#2E9CCA] duration-200">
             Edit Profile
           </p>
-          <p className="text-white flex items-center mx-[5vw] h-12 my-3">
+          <p className="text-white flex items-center mx-[5vw] h-12 my-3 hover:text-[#2E9CCA] duration-200">
             <Link to={"/dashboard"}>Workspaces</Link>
           </p>
           {projects && setProjectsMenu()}
           <p
-            className="text-white flex items-center mx-[5vw] h-12 my-3 mt-auto cursor-pointer"
+            className="text-white flex items-center mx-[5vw] h-12 my-3 mt-auto cursor-pointer hover:text-[#2E9CCA] duration-200"
             onClick={() => logOutUser()}
           >
             Log out

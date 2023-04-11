@@ -16,27 +16,27 @@ class WorkspaceService {
   }
 
   create(body) {
-    return this.api.post('/create', body).then(({ data }) => data);
+    return this.api.post('/create', body).then(({ data }) => data).catch(error => error);
   }
 
   edit(body, id) {
-    return this.api.put(`/edit/${id}`, body).then(({ data }) => data);
+    return this.api.put(`/edit/${id}`, body).then(({ data }) => data).catch(error => error);
   }
 
   delete(id) {
-    return this.api.delete(`/delete/${id}`).then(({ data }) => data);
+    return this.api.delete(`/delete/${id}`).then(({ data }) => data).catch(error => error);
   }
 
   get(id) {
-    return this.api.get(`/${id}`).then(({ data }) => data);
+    return this.api.get(`/${id}`).then(({ data }) => data).catch(error => error);
   }
 
   findByUser(id) {
-    return this.api.get(`/user/${id}`).then(({ data }) => data);
+    return this.api.get(`/user/${id}`).then(({ data }) => data).catch(error => error);
   }
 
   findRelatedProjects(id) {
-    return this.api.get(`/project/${id}`).then(({ data }) => data);
+    return this.api.get(`/project/${id}`).then(({ data }) => data).catch(error => error);
   }
 }
 

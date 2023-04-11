@@ -44,9 +44,11 @@ export default function AddTask({ setAddTask, project, getTasks }) {
   }
 
   return (
-    <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sky-200 h-3/4 w-1/2'>
+    <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#AAABB8] border-2 
+    rounded-lg border-gray-500 h-3/4 w-1/2'>
       <form onSubmit={handleSendTask} className='flex flex-col'>
-        <button onClick={handleClose} type='button' className='cursor-pointer'>Close</button>
+        <button onClick={handleClose} type='button' className="flex h-8 w-14 bg-white items-center 
+          justify-center rounded-lg cursor-pointer relative left-[43vw]">Close</button>
         <label>Name</label>
         <input type='text' name='name' value={form.name} onChange={handleForm}></input>
         <label>Status</label>
