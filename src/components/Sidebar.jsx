@@ -84,7 +84,7 @@ export default function Sidebar() {
       {user && <div className="bg-[#25274D] w-[4vw] h-full absolute text-white flex flex-col items-center gap-y-2 z-40 peer">
         {userInitials && (
           <div className="rounded-[50%] bg-white w-12 h-12 flex items-center justify-center my-2">
-            <p className="text-black">{userInitials}</p>
+            <Link  to={'/profile'} className="text-black">{userInitials}</Link>
           </div>
         )}
         <Link to={"/"}>
@@ -115,7 +115,7 @@ export default function Sidebar() {
         -translate-x-[16vw] peer-hover:translate-x-0 hover:translate-x-0 duration-150"
         >
           <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer hover:text-[#2E9CCA] duration-200">
-            Edit Profile
+            <Link to={'/profile'}>Edit Profile</Link>
           </p>
           <p className="text-white flex items-center mx-[5vw] h-12 my-3 hover:text-[#2E9CCA] duration-200">
             <Link to={"/dashboard"}>Workspaces</Link>

@@ -15,6 +15,8 @@ import Tasks from './components/Tasks';
 import Sidebar from './components/Sidebar';
 import Home from './views/Home';
 import IsLogged from './components/IsLogged';
+import UserProfile from './views/UserProfile';
+import UserEditProfile from './views/UserEditProfile';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<IsLogged><Home /></IsLogged>} />
+        <Route path="/profile" element={<IsPrivate><UserProfile /></IsPrivate>} />
+        <Route path="/profile/edit" element={<IsPrivate><UserEditProfile /></IsPrivate>} />
         <Route path="/dashboard" element={<IsPrivate><Dashboard /></IsPrivate>} />
         <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
         <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} >
