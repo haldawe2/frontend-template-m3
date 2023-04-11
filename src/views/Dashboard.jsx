@@ -35,7 +35,7 @@ export default function Dashboard() {
   }, [user]);
   
   return (
-    <div className='flex items-center gap-x-4 m-10 z-0 ml-20'>
+    <div className='flex items-center gap-x-8 m-10 z-0 ml-24'>
       {editWorkspace && <EditWorkspace 
         setEditWorkspace={setEditWorkspace} 
         user={user} 
@@ -49,11 +49,15 @@ export default function Dashboard() {
       />}
       {user && workspaces.map((workspace) => {
           return (
-            <Link to={`/workspace/${workspace._id}`} key={workspace._id} 
-              className='w-72 h-44 flex bg-zinc-400 items-center justify-center relative'>
-              <p>{workspace.name}</p>
-              <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditWorkspace(e, workspace)}>Edit</p>
-            </Link>
+            <div className='bg-gray-600 rounded-lg'>
+              <Link to={`/workspace/${workspace._id}`} key={workspace._id} 
+                className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-gray-500 items-center 
+                  justify-center relative hover:translate-x-1 hover:-translate-y-1 duration-100 bg-white'>
+                <p className='text-xl'>{workspace.name}</p>
+                <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditWorkspace(e, workspace)}>Edit</p>
+              </Link>
+            </div>
+            
           )
         })
       }

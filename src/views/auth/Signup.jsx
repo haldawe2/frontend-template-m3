@@ -43,19 +43,39 @@ export default function Signup() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input required type="text" name="name" value={user.name} onChange={handleChange} />
-        <label>Surname</label>
-        <input required type="text" name="surname" value={user.surname} onChange={handleChange} />
-        <label>Email</label>
-        <input required type="email" name="email" value={user.email} onChange={handleChange} />
-        <label>Password</label>
-        <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
-        <label>Repeat the password</label>
-        <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
+      <form onSubmit={handleSubmit} className='flex flex-col items-center justify-center h-[94vh] bg-blue-200 gap-y-6'>
+        <div className='flex flex-col gap-y-4 text-center text-xl'>
+          <label>Name</label>
+          <input required type="text" name="name" value={user.name} onChange={handleChange} 
+            className='rounded-lg p-2 w-[300px] focus:outline-none'
+          />
+        </div>
+        <div className='flex flex-col gap-y-4 text-center text-xl'>
+          <label>Surname</label>
+          <input required type="text" name="surname" value={user.surname} onChange={handleChange} 
+            className='rounded-lg p-2 w-[300px] focus:outline-none'
+          />
+        </div>
+        <div className='flex flex-col gap-y-4 text-center text-xl'>
+          <label>Email</label>
+          <input required type="email" name="email" value={user.email} onChange={handleChange} 
+            className='rounded-lg p-2 w-[300px] focus:outline-none'
+          />
+        </div>
+        <div className='flex flex-col gap-y-4 text-center text-xl'>
+          <label>Password</label>
+          <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } 
+            className='rounded-lg p-2 w-[300px] focus:outline-none'
+          />
+        </div>
+        <div className='flex flex-col gap-y-4 text-center text-xl'>
+          <label>Repeat the password</label>
+          <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} 
+            className='rounded-lg p-2 w-[300px] focus:outline-none'
+          />
+        </div>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Register</button>
+        <button type="submit"  className='flex h-14 w-28 bg-white items-center justify-center rounded-lg text-2xl'>Register</button>
       </form>
     </div>
   )
