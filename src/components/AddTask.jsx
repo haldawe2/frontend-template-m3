@@ -34,6 +34,7 @@ export default function AddTask({ setAddTask, project, getTasks }) {
       endDate: form.endDate
     }
     try {
+      console.log(taskToDB)
       await taskService.create(taskToDB);
       await getTasks();
       handleClose();

@@ -34,6 +34,10 @@ class WorkspaceService {
   findByUser(id) {
     return this.api.get(`/user/${id}`).then(({ data }) => data);
   }
+
+  findRelatedProjects(id) {
+    return this.api.get(`/project/${id}`).then(({ data }) => data);
+  }
 }
 
 const workspaceService = new WorkspaceService();

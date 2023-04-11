@@ -8,12 +8,13 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
-import Home from './views/Home';
+import Dashboard from './views/Dashboard';
 import Workspace from './views/Workspace';
 import Project from './views/Project';
 import Gantt from './components/Gantt';
 import Tasks from './components/Tasks';
 import Sidebar from './components/Sidebar';
+import Home from './views/Home';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       <Sidebar/>
       <Navbar />
       <Routes>
-        <Route path="/" element={<IsPrivate><Home /></IsPrivate>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<IsPrivate><Dashboard /></IsPrivate>} />
         <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
         <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} >
           <Route path="gantt" element={<Gantt />} />

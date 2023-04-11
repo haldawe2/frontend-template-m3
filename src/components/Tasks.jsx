@@ -42,13 +42,13 @@ export default function Tasks() {
 
       <div className=' bg-slate-300 my-2 flex justify-between items-center '>
         <p>Pending</p>
-        <div className='cursor-pointer mx-4 p-2 font-bold'>+</div>
+        <div className='cursor-pointer mx-4 p-2 font-bold'  onClick={handleAddTask}>+</div>
       </div>
       {tasks && tasks.filter(task => task.status === 'pending').map(task => drawTaskCard(task))}
 
       <div className=' bg-slate-300 my-2 flex justify-between items-center '>
         <p>Complete</p>
-        <div className='cursor-pointer mx-4 p-2 font-bold'>+</div>
+        <div className='cursor-pointer mx-4 p-2 font-bold'  onClick={handleAddTask}>+</div>
       </div>
       {tasks && tasks.filter(task => task.status === 'complete').map(task => drawTaskCard(task))}
     </div>
