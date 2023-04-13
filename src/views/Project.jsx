@@ -30,8 +30,8 @@ export default function Project() {
   }, [location]);
   
   return (
-    <div className='bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
-      <ul className='flex justify-center gap-x-8 relative bottom-9 w-1/5 mx-auto'>
+    <div className='bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw] overflow-hidden'>
+      <ul className='fixed flex justify-center gap-x-6 top-3 left-[50vw] mx-auto'>
         <li><NavLink to={`/project/${projectId}/tasks`}>Tasks</NavLink></li>
         <li><NavLink to={`/project/${projectId}/gantt`}>Gantt</NavLink></li>
       </ul>

@@ -38,7 +38,7 @@ export default function Workspace() {
   }
   
   return (
-    <div className='flex gap-x-8 py-8 z-0 pl-24 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
+    <div className='flex gap-x-8 p-8 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
       {editProject && <EditProject 
         setEditProject={setEditProject}
         user={user}

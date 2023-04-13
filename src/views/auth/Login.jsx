@@ -48,7 +48,7 @@ export default function Login() {
   }, [isLoggedIn]);
 
   return (
-    <div>
+    <div className="w-[100vw]">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center h-[94vh] bg-gradient-to-t from-[#25274D] to-[#076071] gap-y-6 text-white"

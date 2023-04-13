@@ -18,7 +18,7 @@ export default function UserProfile() {
   }
 
   return (
-    <div className='flex gap-x-8 py-8 z-0 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
+    <div className='flex gap-x-8 py-8 z-0 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
       {user && <div className='flex flex-col mx-auto items-center text-2xl gap-y-10'>
         <div className='flex flex-col'>
           <label className='text-white mb-5'>Full name:</label>

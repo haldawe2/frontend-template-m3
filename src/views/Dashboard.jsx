@@ -35,7 +35,7 @@ export default function Dashboard() {
   }, [user]);
   
   return (
-    <div className='flex gap-x-8 z-0 py-8 pl-24 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
+    <div className='flex gap-x-8 z-0 p-8 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
       {editWorkspace && <EditWorkspace 
         setEditWorkspace={setEditWorkspace} 
         user={user} 

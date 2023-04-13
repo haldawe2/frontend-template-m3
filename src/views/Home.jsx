@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-[94vh] bg-gradient-to-t from-[#25274D] to-[#076071]">
+    <div className="flex flex-col items-center justify-center h-[94vh] w-[100vw] bg-gradient-to-t from-[#25274D] to-[#076071]">
       <h1 className="text-[12rem] text-white">ProMa</h1>
       <p className="text-5xl text-white">Project management made easy</p>
       <div className="flex gap-x-[10vw] my-[10vh]">

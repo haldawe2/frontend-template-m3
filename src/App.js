@@ -22,23 +22,27 @@ function App() {
   return (
     <div className="App">
       <Toaster/>
-      <Sidebar/>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<IsLogged><Home /></IsLogged>} />
-        <Route path="/profile" element={<IsPrivate><UserProfile /></IsPrivate>} />
-        <Route path="/profile/edit" element={<IsPrivate><UserEditProfile /></IsPrivate>} />
-        <Route path="/dashboard" element={<IsPrivate><Dashboard /></IsPrivate>} />
-        <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
-        <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} >
-          <Route path="gantt" element={<Gantt />} />
-          <Route path="tasks" element={<Tasks />} />
-        </Route>
-        <Route path="/signup" element={<IsLogged><Signup /></IsLogged>} />
-        <Route path="/login" element={<IsLogged><Login /></IsLogged>} />
-        <Route path="/error" element={<ErrorPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className='flex'>
+        <Sidebar/>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<IsLogged><Home /></IsLogged>} />
+            <Route path="/profile" element={<IsPrivate><UserProfile /></IsPrivate>} />
+            <Route path="/profile/edit" element={<IsPrivate><UserEditProfile /></IsPrivate>} />
+            <Route path="/dashboard" element={<IsPrivate><Dashboard /></IsPrivate>} />
+            <Route path="/workspace/:workspaceId" element={<IsPrivate><Workspace /></IsPrivate>} />
+            <Route path="/project/:projectId" element={<IsPrivate><Project /></IsPrivate>} >
+              <Route path="gantt" element={<Gantt />} />
+              <Route path="tasks" element={<Tasks />} />
+            </Route>
+            <Route path="/signup" element={<IsLogged><Signup /></IsLogged>} />
+            <Route path="/login" element={<IsLogged><Login /></IsLogged>} />
+            <Route path="/error" element={<ErrorPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>            
+        </div>
+      </div>
     </div>
   );
 }

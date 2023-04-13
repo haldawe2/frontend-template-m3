@@ -59,7 +59,8 @@ export default function UserEditProfile() {
     const userID = user._id;
     try {
       await userService.edit(userForDB, userID);
-      const response = await authService.login(user);
+      localStorage.removeItem('authToken');
+      const response = await authService.login({ email: userForDB.email, password: userForDB.password1 });
       if (response.authToken) {
         storeToken(response.authToken);
         authenticateUser();
@@ -74,7 +75,7 @@ export default function UserEditProfile() {
   };
 
   return (
-    <div onSubmit={handleSubmit} className='flex gap-x-8 py-8 z-0 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh]'>
+    <div onSubmit={handleSubmit} className='flex gap-x-8 py-8 z-0 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
       {user && <form className='flex flex-col mx-auto items-center text-2xl gap-y-10'>
         <div className='flex flex-col gap-y-5'>
           <label className='text-white'>Full name:</label>
