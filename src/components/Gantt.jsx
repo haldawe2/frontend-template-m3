@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { max, min, parseISO, format, eachDayOfInterval, add, sub } from 'date-fns'
+import { max, min, parseISO, format, eachDayOfInterval, add, sub, isWithinInterval } from 'date-fns'
 import { useOutletContext } from "react-router-dom";
 
 export default function Gantt() {
@@ -78,29 +78,37 @@ export default function Gantt() {
   }
 
   const drawDay = () => {
-
+    // Draws a vertical line on today's day
     const todayDate = format(new Date(), 'PP');
     const todayHour = format(new Date(), 'k');
+    // Checks if today's date is within the project days, if not doesn't draw the line
+    const earliestDate = min(tasks.map(task => parseISO(task.startDate)));
+    const latestDate = max(tasks.map(task => parseISO(task.endDate)));
+    let buffer = 3;
+    const earlyBuffer = sub(earliestDate, {days: buffer});
+    const latestBuffer = add(latestDate, {days: buffer});
+    if (isWithinInterval(new Date(), { start: earlyBuffer, end: latestBuffer})) {
+      const startPosition = document.getElementById(todayDate);
+      const coordsDay = {
+        xStart: startPosition.getBoundingClientRect().left,
+        xEnd: startPosition.getBoundingClientRect().right,
+        y: startPosition.getBoundingClientRect().bottom + 1
+      }
+      // Get the proportional space of the hour of the day
+      const xPosition = coordsDay.xStart + (((coordsDay.xEnd-coordsDay.xStart)/24) * todayHour);
 
-    const startPosition = document.getElementById(todayDate);
-    const coordsDay = {
-      xStart: startPosition.getBoundingClientRect().left,
-      xEnd: startPosition.getBoundingClientRect().right,
-      y: startPosition.getBoundingClientRect().bottom + 1
+
+      return (
+        <div style={{ position: "fixed",
+          top: `${coordsDay.y}px`, 
+          left: `${xPosition}px`,
+          height: "88.5%",
+          width: "5px",
+          backgroundColor: "#4e9df9",
+          zIndex: 0}}></div>
+      )  
     }
-    console.log(coordsDay)
-    const xPosition = coordsDay.xStart + (((coordsDay.xEnd-coordsDay.xStart)/24) * todayHour);
-    console.log(xPosition)
-
-    return (
-      <div style={{ position: "fixed",
-        top: `${coordsDay.y}px`, 
-        left: `${xPosition}px`,
-        height: "88.5%",
-        width: "5px",
-        backgroundColor: "#4e9df9",
-        zIndex: 0}}></div>
-    )
+    
   };
 
   //Sets the days that will be shown on the Gantt
