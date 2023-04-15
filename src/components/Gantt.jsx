@@ -8,6 +8,8 @@ export default function Gantt() {
   const [tableReady, setTableReady] = useState(false);
   const [periodProject, setPeriodProject] = useState(null);
 
+  //For the tasks to be positioned when the Gantt is scrolled, the component needs to be rerendered again.
+  //This updateState will be called only on a scroll event causing the rerender
   const [, updateState] = useState();
   const forceUpdate = useCallback(() => updateState({}), []);
 
@@ -49,13 +51,13 @@ export default function Gantt() {
     let color;
     switch (task.status) {
       case "complete":
-        color = "green";
+        color = "#05b605";
         break;
       case "pending":
-        color = "rgb(145 144 143)";
+        color = "#757d81";
         break;
       case "in progress":
-        color = "rgb(240 173 22)";
+        color = "#00BCD4";
         break;
       default:
         break;
@@ -75,12 +77,7 @@ export default function Gantt() {
     )
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-
-    })
-  }, [])
-
+  //Sets the days that will be shown on the Gantt
   useEffect(() => {
     if (tasks && tasks.length > 0) {
       setCalendarWidth();
@@ -88,6 +85,8 @@ export default function Gantt() {
     // eslint-disable-next-line
   }, [tasks]);
 
+  //Starts rendering the tasks only once the table has been created 
+  //(ref porperty on the table has html in it)
   const tableRendered = useCallback(table => {
     if (table !== null) {
       setTableReady(true);

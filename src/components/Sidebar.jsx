@@ -45,7 +45,7 @@ export default function Sidebar() {
       <>
         {projects && (
           <div className="group my-3">
-            <p className="flex items-center mx-[5vw] h-12 bg-white justify-center p-2 rounded-lg">
+            <p className="flex items-center h-12 text-white justify-center p-2 rounded-lg">
               {currentProject.name}
             </p>
             <div className="hidden group group-hover:block hover:block text-white flex items-center mx-[5vw]">
@@ -144,7 +144,7 @@ export default function Sidebar() {
           <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer hover:text-[#2E9CCA] duration-200">
             <Link to={"/profile"}>Edit Profile</Link>
           </p>
-          <p className="text-white flex items-center mx-[5vw] h-12 my-3 hover:text-[#2E9CCA] duration-200">
+          <p className="text-white flex items-center mx-[5vw] h-12 my-1 hover:text-[#2E9CCA] duration-200">
             <Link to={"/dashboard"}>Workspaces</Link>
           </p>
           {projects && setProjectsMenu()}

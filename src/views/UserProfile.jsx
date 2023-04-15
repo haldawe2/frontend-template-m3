@@ -23,13 +23,13 @@ export default function UserProfile() {
         <div className='flex flex-col'>
           <label className='text-white mb-5'>Full name:</label>
           <div className='flex gap-x-8'>
-            <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-4'>{user.name}</p>
-            <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-4'>{user.surname}</p> 
+            <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-10'>{user.name}</p>
+            <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-10'>{user.surname}</p> 
           </div>
         </div>
         <div className='flex flex-col'>
           <label className='text-white mb-5'>Email:</label>
-          <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-4'>{user.email}</p>
+          <p className='border-2 rounded-lg border-[#2E9CCA] bg-white p-1 px-14'>{user.email}</p>
         </div>
         <div className='flex gap-x-20 my-10'>
           <Link to={'/profile/edit'} className='border-2 rounded-lg border-[#2E9CCA] 

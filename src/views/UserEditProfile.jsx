@@ -95,6 +95,7 @@ export default function UserEditProfile() {
           <button type='submit' className='border-2 rounded-lg border-[#2E9CCA] 
             bg-white p-1 px-8 hover:text-white hover:bg-[#2E9CCA] duration-200'>Submit</button>
         </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>}
     </div>
   )

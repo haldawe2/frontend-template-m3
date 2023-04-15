@@ -15,13 +15,13 @@ export default function Tasks() {
     let color;
     switch (task.status) {
       case "complete":
-        color = "green";
+        color = "#05b605";
         break;
       case "pending":
-        color = "rgb(208, 17, 17)";
+        color = "#757d81";
         break;
       case "in progress":
-        color = "blue";
+        color = "#00BCD4";
         break;
       default:
         break;
@@ -30,7 +30,7 @@ export default function Tasks() {
     return (
       <div key={task._id} className='flex justify-between py-2 text-white bg-sky-950 outline-[0.5px] outline outline-zinc-500'>
         <div className='flex items-center'>
-          <p className='mx-4' onClick={() => handleEditTask(task._id)}>{task.name}</p>
+          <p className='mx-4 cursor-pointer' onClick={() => handleEditTask(task._id)}>{task.name}</p>
           <div className={`w-4 h-4 rounded-[50%]`} style={{ backgroundColor: `${color}`}}></div>
         </div>
         <div className='flex gap-x-8 mx-4'>
