@@ -77,6 +77,32 @@ export default function Gantt() {
     )
   }
 
+  const drawDay = () => {
+
+    const todayDate = format(new Date(), 'PP');
+    const todayHour = format(new Date(), 'k');
+
+    const startPosition = document.getElementById(todayDate);
+    const coordsDay = {
+      xStart: startPosition.getBoundingClientRect().left,
+      xEnd: startPosition.getBoundingClientRect().right,
+      y: startPosition.getBoundingClientRect().bottom + 1
+    }
+    console.log(coordsDay)
+    const xPosition = coordsDay.xStart + (((coordsDay.xEnd-coordsDay.xStart)/24) * todayHour);
+    console.log(xPosition)
+
+    return (
+      <div style={{ position: "fixed",
+        top: `${coordsDay.y}px`, 
+        left: `${xPosition}px`,
+        height: "88.5%",
+        width: "5px",
+        backgroundColor: "#4e9df9",
+        zIndex: 0}}></div>
+    )
+  };
+
   //Sets the days that will be shown on the Gantt
   useEffect(() => {
     if (tasks && tasks.length > 0) {
@@ -122,6 +148,7 @@ export default function Gantt() {
         </tbody>
       </table>}
       {tableReady && tasks.map((task, index) => drawTask(task, index))}
+      {tableReady && drawDay()}
     </div>
   )
 }
