@@ -50,7 +50,7 @@ export default function Signup() {
     <div className="w-[100vw]">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center h-[94vh] bg-gradient-to-t from-[#25274D] to-[#076071] gap-y-6 text-white"
+        className="flex flex-col items-center justify-center h-[94vh] bg-gradient-to-t from-[#25274D] to-[#076071] gap-y-6"
       >
         <div className="flex flex-col gap-y-4 text-center text-xl">
           <label>Name</label>
