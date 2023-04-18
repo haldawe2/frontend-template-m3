@@ -53,7 +53,7 @@ npm run start
 
 ## Useful links
 
-- [Presentation slides]()
+- [Presentation slides](https://slides.com/haldawe/proma)
 - [Backend repository](https://github.com/haldawe2/backend-template-m3)
 - [Backend deploy](https://project-manager-backend.fly.dev/)
 - [Deployed app](https://swiftpm.netlify.app/)
