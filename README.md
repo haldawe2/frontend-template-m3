@@ -30,18 +30,32 @@ npm run start
 - User can sign up and create a new account
 - User can login
 - User can log out
+- User can create workspaces
+- User can edit workspaces
+- User can delete workspaces
+- User can add projects to workspaces
+- User can edit projects
+- User can delete projects
+- User can add tasks to projects
+- User can edit tasks
+- User can delete tasks
+- User can see the tasks on a Gantt chart
+- User can scroll the Gantt chart
 
 ### Backlog
 
-- User can ...
+- User can add dependencies between tasks
+- User can drag tasks on Gantt chart to change the dates
+- User can see progress of tasks on Gantt chart
+- User can use a kanban to change the status of tasks
 
 ---
 
 ## Useful links
 
 - [Presentation slides]()
-- [Backend repository]()
-- [Backend deploy]()
-- [Deployed app]()
+- [Backend repository](https://github.com/haldawe2/backend-template-m3)
+- [Backend deploy](https://project-manager-backend.fly.dev/)
+- [Deployed app](https://swiftpm.netlify.app/)
 
 
