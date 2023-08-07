@@ -102,7 +102,7 @@ export default function Sidebar() {
   return (
     <>
       {user && (
-        <div className="bg-[#25274D] sticky top-0 left-0 px-2 h-[100vh] text-white flex flex-col items-center 
+        <div className="bg-[#9DC7CC] sticky top-0 left-0 px-2 h-[100vh] text-white flex flex-col items-center 
         min-w-[4vw] peer z-40">
           {userInitials && (
             <div className="rounded-[50%] bg-white w-12 h-12 flex items-center justify-center my-2">
@@ -138,18 +138,18 @@ export default function Sidebar() {
       )}
       {user && userInitials && (
         <div
-          className="h-full fixed w-[16vw] z-30 bg-[#25274D] gap-y-2 flex flex-col peer
-        -translate-x-[16vw] peer-hover:translate-x-0 hover:translate-x-0 duration-150 outline outline-zinc-500 outline-[0.5px]"
+          className="h-full fixed w-[16vw] z-30 bg-[#9DC7CC] gap-y-2 flex flex-col peer
+        -translate-x-[16vw] peer-hover:translate-x-0 hover:translate-x-0 duration-150"
         >
-          <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer hover:text-[#2E9CCA] duration-200">
+          <p className="text-white flex items-center mx-[5vw] h-12 my-2 cursor-pointer hover:text-[#238995] duration-200">
             <Link to={"/profile"}>Edit Profile</Link>
           </p>
-          <p className="text-white flex items-center mx-[5vw] h-12 my-1 hover:text-[#2E9CCA] duration-200">
+          <p className="text-white flex items-center mx-[5vw] h-12 my-1 hover:text-[#238995] duration-200">
             <Link to={"/dashboard"}>Workspaces</Link>
           </p>
           {projects && setProjectsMenu()}
           <p
-            className="text-white flex items-center mx-[5vw] h-12 my-3 mt-auto cursor-pointer hover:text-[#2E9CCA] duration-200"
+            className="text-white flex items-center mx-[5vw] h-12 my-3 mt-auto cursor-pointer hover:text-[#238995] duration-200"
             onClick={() => logOutUser()}
           >
             Log out

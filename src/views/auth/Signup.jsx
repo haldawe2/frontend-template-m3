@@ -50,9 +50,9 @@ export default function Signup() {
     <div className="w-[100vw]">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center h-[94vh] bg-gradient-to-t from-[#25274D] to-[#076071] gap-y-6"
+        className="flex flex-col items-center justify-center h-[94vh] bg-[#9DC7CC] gap-y-3"
       >
-        <div className="flex flex-col gap-y-4 text-center text-xl">
+        <div className="flex flex-col gap-y-2 text-center text-xl">
           <label>Name</label>
           <input
             required
@@ -63,7 +63,7 @@ export default function Signup() {
             className="rounded-lg p-2 w-[300px] focus:outline-none"
           />
         </div>
-        <div className="flex flex-col gap-y-4 text-center text-xl">
+        <div className="flex flex-col gap-y-2 text-center text-xl">
           <label>Surname</label>
           <input
             required
@@ -74,7 +74,7 @@ export default function Signup() {
             className="rounded-lg p-2 w-[300px] focus:outline-none"
           />
         </div>
-        <div className="flex flex-col gap-y-4 text-center text-xl">
+        <div className="flex flex-col gap-y-2 text-center text-xl">
           <label>Email</label>
           <input
             required
@@ -85,7 +85,7 @@ export default function Signup() {
             className="rounded-lg p-2 w-[300px] focus:outline-none"
           />
         </div>
-        <div className="flex flex-col gap-y-4 text-center text-xl">
+        <div className="flex flex-col gap-y-2 text-center text-xl">
           <label>Password</label>
           <input
             required
@@ -96,7 +96,7 @@ export default function Signup() {
             className="rounded-lg p-2 w-[300px] focus:outline-none"
           />
         </div>
-        <div className="flex flex-col gap-y-4 text-center text-xl">
+        <div className="flex flex-col gap-y-2 text-center text-xl">
           <label>Repeat the password</label>
           <input
             required
@@ -110,8 +110,8 @@ export default function Signup() {
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <button
           type="submit"
-          className="flex h-14 w-28 bg-white items-center justify-center rounded-lg 
-          text-2xl text-black hover:bg-[#2E9CCA] hover:text-white duration-200"
+          className="flex h-12 w-28 mt-12 bg-white items-center justify-center rounded-lg 
+          text-2xl text-black hover:bg-[#238995] hover:text-white duration-200"
         >
           Register
         </button>

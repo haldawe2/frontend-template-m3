@@ -35,7 +35,7 @@ export default function Dashboard() {
   }, [user]);
   
   return (
-    <div className='flex gap-x-8 z-0 p-8 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
+    <div className='flex gap-x-8 z-0 p-8 h-[94vh] w-[96vw]'>
       {editWorkspace && <EditWorkspace 
         setEditWorkspace={setEditWorkspace} 
         user={user} 
@@ -50,8 +50,8 @@ export default function Dashboard() {
       {user && workspaces.map((workspace) => {
           return (
             <Link to={`/workspace/${workspace._id}`} key={workspace._id} 
-              className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-[#2E9CCA] items-center
-                justify-center relative hover:bg-[#2E9CCA] hover:text-white duration-200 bg-white'>
+              className='w-[20vw] h-[25vh] flex border-4 rounded-lg border-[#9DC7CC] items-center
+                justify-center relative hover:bg-[#9DC7CC] hover:text-white duration-200 bg-white'>
               <p className='text-xl'>{workspace.name}</p>
               <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditWorkspace(e, workspace)}>Edit</p>
             </Link>
@@ -59,7 +59,7 @@ export default function Dashboard() {
         })
       }
       <div className='w-72 h-44 flex justify-center items-center' onClick={handleCreateWorkspace}>
-        <p className='text-[60px] text-white hover:text-[#2E9CCA] duration-200'>+</p>
+        <p className='text-[60px] text-[#9DC7CC] hover:text-[#238995] duration-200'>+</p>
       </div>
     </div>
   )

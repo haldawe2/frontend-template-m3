@@ -10,6 +10,8 @@ export default function Tasks() {
   const [addTask, setAddTask] = useState(false);
   const [editTask, setEditTask] = useState(false);
 
+  const statusStyle = "bg-[#9DC7CC] py-1 flex justify-between items-center text-xl text-white pl-8 mt-4" 
+
   const drawTaskCard = (task) => {
 
     let color;
@@ -28,7 +30,7 @@ export default function Tasks() {
     }
 
     return (
-      <div key={task._id} className='flex justify-between py-2 text-white bg-sky-950 outline-[0.5px] outline outline-zinc-500'>
+      <div key={task._id} className='flex justify-between py-2 border border-[#9DC7CC] bg-gray-100'>
         <div className='flex items-center'>
           <p className='mx-4 cursor-pointer' onClick={() => handleEditTask(task._id)}>{task.name}</p>
           <div className={`w-4 h-4 rounded-[50%]`} style={{ backgroundColor: `${color}`}}></div>
@@ -50,22 +52,22 @@ export default function Tasks() {
   }
   
   return (
-    <div className='flex flex-col w-[96vw] ml-auto'>
+    <div className='flex flex-col mt-8 mx-16'>
       {editTask && <EditTask setEditTask={setEditTask} project={project} getTasks={getTasks} tasks={tasks} taskId={editTask} />}
       {addTask && <AddTask setAddTask={setAddTask} project={project} getTasks={getTasks}/>}
-      <div className='bg-sky-800 py-1 flex justify-between items-center text-xl text-white pl-10 outline-[0.5px] outline outline-zinc-500'>
+      <div className={statusStyle}>
         <p>In progress</p>
         <div className='cursor-pointer mx-4 p-1 font-bold' onClick={handleAddTask}>+</div>
       </div>
       {tasks && tasks.filter(task => task.status === 'in progress').map(task => drawTaskCard(task))}
 
-      <div className='bg-sky-800 py-1 flex justify-between items-center text-xl text-white mt-4 pl-10 outline-[0.5px] outline outline-zinc-500'>
+      <div className={statusStyle}>
         <p>Pending</p>
         <div className='cursor-pointer mx-4 p-1 font-bold'  onClick={handleAddTask}>+</div>
       </div>
       {tasks && tasks.filter(task => task.status === 'pending').map(task => drawTaskCard(task))}
 
-      <div className='bg-sky-800 py-1 flex justify-between items-center text-xl text-white mt-4 pl-10 outline-[0.5px] outline outline-zinc-500'>
+      <div className={statusStyle}>
         <p>Complete</p>
         <div className='cursor-pointer mx-4 p-1 font-bold'  onClick={handleAddTask}>+</div>
       </div>

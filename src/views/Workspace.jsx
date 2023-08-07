@@ -38,7 +38,7 @@ export default function Workspace() {
   }
   
   return (
-    <div className='flex gap-x-8 p-8 bg-gradient-to-t from-[#25274D] to-[#076071] h-[94vh] w-[96vw]'>
+    <div className='flex gap-x-8 p-8 h-[94vh] w-[96vw]'>
       {editProject && <EditProject 
         setEditProject={setEditProject}
         user={user}
@@ -55,15 +55,15 @@ export default function Workspace() {
       {projects && projects.map((project) => {
         return (
           <Link to={`/project/${project._id}/tasks`} key={project._id} 
-           className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-[#2E9CCA] items-center
-                justify-center relative hover:bg-[#2E9CCA] hover:text-white duration-200 bg-white'>
+           className='w-[20vw] h-[25vh] flex border-2 rounded-lg border-[#9DC7CC] items-center
+                justify-center relative hover:bg-[#9DC7CC] hover:text-white duration-200 bg-white'>
             <p className='text-xl'>{project.name}</p>
             <p className='absolute bottom-1 right-3 m-2' onClick={(e) => handleEditProject(e, project)}>Edit</p>
           </Link>    
         )
       })}
       <div className='w-72 h-44 flex justify-center items-center' onClick={handleCreateProject}>
-        <p className='text-[60px] text-white hover:text-[#2E9CCA] duration-200'>+</p>
+        <p className='text-[60px] text-[#9DC7CC] hover:text-[#238995] duration-200'>+</p>
       </div>
     </div>
   )
